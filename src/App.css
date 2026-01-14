@@ -11,6 +11,15 @@
   --safe-area-inset-right: env(safe-area-inset-right);
   --safe-area-inset-bottom: env(safe-area-inset-bottom);
   --safe-area-inset-left: env(safe-area-inset-left);
+  
+  /* 统一字号体系 */
+  --font-size-hero: 2.5rem;      /* 超大标题 */
+  --font-size-h1: 1.75rem;       /* 一级标题 */
+  --font-size-h2: 1.375rem;      /* 二级标题 */
+  --font-size-h3: 1.125rem;      /* 三级标题 */
+  --font-size-base: 0.9375rem;   /* 正文 */
+  --font-size-sm: 0.875rem;      /* 小字 */
+  --font-size-xs: 0.75rem;       /* 超小字 */
 }
 
 * {
@@ -111,7 +120,7 @@ body {
 }
 
 .header h1 {
-  font-size: 2.5rem;
+  font-size: var(--font-size-hero);
   margin: 0 0 0.5rem 0;
   font-weight: 700;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -292,7 +301,7 @@ body {
 .info-text {
   text-align: center;
   color: #64748b;
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   line-height: 1.6;
   margin: 0;
 }
@@ -333,7 +342,7 @@ body {
 }
 
 .page-header h1 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-h2);
   font-weight: 800;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
@@ -477,7 +486,7 @@ body {
 
 .item-description {
   color: #4a5568;
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   line-height: 1.6;
   margin: 0 0 0.75rem 0;
 }
@@ -715,7 +724,7 @@ body {
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border-radius: 50%;
-  font-size: 1.5rem;
+  font-size: var(--font-size-h2);
   cursor: pointer;
   z-index: 1001;
   display: flex;
@@ -803,7 +812,7 @@ body {
   }
 
   .detail-title {
-    font-size: 1.5rem;
+    font-size: var(--font-size-h2);
   }
 
   .detail-actions {
@@ -999,7 +1008,7 @@ body {
 }
 
 .exchange-title h1 {
-  font-size: 1.75rem;
+  font-size: var(--font-size-h1);
   font-weight: 800;
   margin: 0;
   color: white;
@@ -1009,7 +1018,7 @@ body {
 
 .exchange-title h1::before {
   content: '💎 ';
-  font-size: 1.5rem;
+  font-size: var(--font-size-h2);
 }
 
 .header-badges {
@@ -1182,7 +1191,7 @@ body {
   padding: 1rem 1.5rem;
   border: none;
   background: transparent;
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   font-weight: 700;
   color: #64748b;
   cursor: pointer;
@@ -1242,7 +1251,7 @@ body {
   border: none;
   padding: 1rem 2.5rem;
   border-radius: 20px;
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   font-weight: 800;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1337,7 +1346,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: var(--font-size-h2);
   flex-shrink: 0;
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
 }
@@ -1643,7 +1652,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
+  font-size: var(--font-size-hero);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   border: 2px solid rgba(255, 255, 255, 0.3);
   animation: pulse-icon 3s ease-in-out infinite;
@@ -1929,7 +1938,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
+  font-size: var(--font-size-hero);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   border: 2px solid rgba(255, 255, 255, 0.3);
   animation: bounce-icon 2s ease-in-out infinite;
@@ -2011,7 +2020,7 @@ body {
 }
 
 .feature-icon {
-  font-size: 1.75rem;
+  font-size: var(--font-size-h1);
   display: block;
   animation: wiggle 3s ease-in-out infinite;
 }
@@ -2156,7 +2165,7 @@ body {
 }
 
 .price-info-header h2 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-h2);
   font-weight: 800;
   margin: 0;
 }
@@ -2176,7 +2185,7 @@ body {
 }
 
 .price-value-large {
-  font-size: 2.5rem;
+  font-size: var(--font-size-hero);
   font-weight: 800;
   line-height: 1;
 }
@@ -2774,7 +2783,7 @@ body {
 }
 
 .asset-symbol-icon {
-  font-size: 1.5rem;
+  font-size: var(--font-size-h2);
   font-weight: 800;
   color: white;
 }
@@ -2865,7 +2874,7 @@ body {
 }
 
 .empty-hint {
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   color: #64748b;
 }
 
@@ -3044,7 +3053,7 @@ body {
 }
 
 .link-icon {
-  font-size: 1.75rem;
+  font-size: var(--font-size-h1);
   transition: transform 0.3s ease;
 }
 
@@ -3122,7 +3131,7 @@ body {
 
   .banner-title,
   .trade-title {
-    font-size: 1.5rem;
+    font-size: var(--font-size-h2);
   }
 
   .banner-subtitle,
@@ -3152,7 +3161,7 @@ body {
   }
 
   .feature-icon {
-    font-size: 1.5rem;
+    font-size: var(--font-size-h2);
   }
 
   .feature-text {
@@ -3320,7 +3329,7 @@ body {
   background: none;
   border: none;
   color: #007aff;
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   font-weight: 500;
   cursor: pointer;
   padding: 0.5rem;
@@ -3386,14 +3395,14 @@ body {
 }
 
 .app-name {
-  font-size: 1.5rem;
+  font-size: var(--font-size-h2);
   font-weight: 700;
   color: #1d1d1f;
   margin: 0;
 }
 
 .app-tagline {
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   color: #86868b;
   margin: 0;
 }
@@ -3421,7 +3430,7 @@ body {
   color: white;
   border: none;
   border-radius: 20px;
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
@@ -3462,7 +3471,7 @@ body {
 }
 
 .app-description-content p {
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   line-height: 1.6;
   color: #1d1d1f;
   margin: 0 0 1rem 0;
@@ -3541,7 +3550,7 @@ body {
   align-items: center;
   padding: 0.75rem 0;
   border-bottom: 1px solid #f5f5f7;
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
 }
 
 .info-item span:first-child {
@@ -3570,7 +3579,7 @@ body {
 }
 
 .guide-title {
-  font-size: 1.5rem;
+  font-size: var(--font-size-h2);
   font-weight: 700;
   margin: 0 0 0.75rem 0;
 }
@@ -3616,7 +3625,7 @@ body {
 }
 
 .step-text {
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   line-height: 1.4;
 }
 
@@ -3797,7 +3806,7 @@ body {
 }
 
 .app-name {
-  font-size: 1.75rem;
+  font-size: var(--font-size-h1);
   font-weight: 800;
   color: #1d1d1f;
   margin: 0 0 0.5rem 0;
@@ -3910,7 +3919,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: var(--font-size-h2);
   flex-shrink: 0;
   box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
 }
@@ -4017,7 +4026,7 @@ body {
 }
 
 .app-description p {
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   color: #515154;
   line-height: 1.6;
   margin: 0 0 1.5rem 0;
@@ -4130,12 +4139,12 @@ body {
 }
 
 .info-label {
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   color: #86868b;
 }
 
 .info-value {
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   color: #1d1d1f;
   font-weight: 500;
   text-align: right;
@@ -4172,7 +4181,7 @@ body {
 }
 
 .install-title {
-  font-size: 2.5rem;
+  font-size: var(--font-size-hero);
   font-weight: 800;
   margin: 0;
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -4245,7 +4254,7 @@ body {
 }
 
 .status-title {
-  font-size: 1.75rem;
+  font-size: var(--font-size-h1);
   font-weight: 700;
   color: #10b981;
   margin: 0 0 0.5rem 0;
@@ -4336,7 +4345,7 @@ body {
 }
 
 .action-title {
-  font-size: 1.75rem;
+  font-size: var(--font-size-h1);
   font-weight: 700;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
@@ -4414,7 +4423,7 @@ body {
 }
 
 .button-icon {
-  font-size: 1.5rem;
+  font-size: var(--font-size-h2);
   animation: downloadPulse 2s ease-in-out infinite;
 }
 
@@ -4457,7 +4466,7 @@ body {
 
 .android-preview-tip p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   color: #047857;
   font-weight: 500;
   line-height: 1.5;
@@ -4578,7 +4587,7 @@ body {
 }
 
 .guide-title {
-  font-size: 1.75rem;
+  font-size: var(--font-size-h1);
   font-weight: 700;
   color: #1e293b;
   text-align: center;
@@ -4628,7 +4637,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: var(--font-size-h2);
   font-weight: 700;
   box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
   position: relative;
@@ -4669,7 +4678,7 @@ body {
 }
 
 .step-content p {
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   color: #64748b;
   margin: 0;
   line-height: 1.6;
@@ -4704,7 +4713,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   color: #1e40af;
   border: 1px solid rgba(59, 130, 246, 0.2);
 }
@@ -4741,14 +4750,14 @@ body {
 
 .tip-bullet {
   color: #667eea;
-  font-size: 1.5rem;
+  font-size: var(--font-size-h2);
   line-height: 1;
   flex-shrink: 0;
 }
 
 .tip-item p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   color: #64748b;
   line-height: 1.6;
 }
@@ -4765,14 +4774,14 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   color: #4338ca;
   border: 1px solid rgba(102, 126, 234, 0.2);
   line-height: 1.6;
 }
 
 .notice-icon {
-  font-size: 1.5rem;
+  font-size: var(--font-size-h2);
   flex-shrink: 0;
 }
 
@@ -4795,7 +4804,7 @@ body {
 }
 
 .unsupported-title {
-  font-size: 1.75rem;
+  font-size: var(--font-size-h1);
   font-weight: 700;
   color: #64748b;
   margin: 0 0 0.5rem 0;
@@ -4828,7 +4837,7 @@ body {
   padding: 0.75rem 1rem;
   background: rgba(102, 126, 234, 0.05);
   border-radius: 10px;
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
 }
 
 .browser-item span:first-child {
@@ -4858,7 +4867,7 @@ body {
 }
 
 .support-title {
-  font-size: 1.75rem;
+  font-size: var(--font-size-h1);
   font-weight: 800;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
@@ -5069,7 +5078,7 @@ body {
 }
 
 .platform-icon {
-  font-size: 1.5rem;
+  font-size: var(--font-size-h2);
   position: relative;
   z-index: 1;
 }
@@ -5262,7 +5271,7 @@ body {
 }
 
 .legend-title {
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   font-weight: 700;
   color: #1e293b;
   margin-bottom: 1rem;
@@ -5363,7 +5372,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: var(--font-size-h2);
   flex-shrink: 0;
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
   animation: pulse 2s ease-in-out infinite;
@@ -5391,7 +5400,7 @@ body {
 }
 
 .recommendation-content p {
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   color: #475569;
   line-height: 1.6;
   margin: 0;
@@ -5409,7 +5418,7 @@ body {
 }
 
 .features-title {
-  font-size: 1.5rem;
+  font-size: var(--font-size-h2);
   font-weight: 700;
   color: #1e293b;
   text-align: center;
@@ -5456,7 +5465,7 @@ body {
 }
 
 .feature-emoji {
-  font-size: 2.5rem;
+  font-size: var(--font-size-hero);
   display: block;
   margin-bottom: 0.75rem;
 }
@@ -5511,7 +5520,7 @@ body {
 }
 
 .app-store-title {
-  font-size: 1.5rem;
+  font-size: var(--font-size-h2);
   font-weight: 600;
   background: linear-gradient(135deg, #1a73e8 0%, #01875f 100%);
   -webkit-background-clip: text;
@@ -6420,7 +6429,7 @@ body {
   }
 
   .guide-icon-large {
-    font-size: 2.5rem;
+    font-size: var(--font-size-hero);
   }
 
   .guide-title {
