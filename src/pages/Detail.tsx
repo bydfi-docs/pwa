@@ -1,9 +1,8 @@
-import { useNavigate, useParams, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import '../App.css'
 
 function Detail() {
   const navigate = useNavigate()
-  const { id } = useParams()
   const location = useLocation()
   const item = location.state?.item
 

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import '../App.css'
 
 interface ImageItem {
@@ -10,7 +9,6 @@ interface ImageItem {
 }
 
 function Gallery() {
-  const navigate = useNavigate()
   const [images, setImages] = useState<ImageItem[]>([])
   const [selectedImage, setSelectedImage] = useState<ImageItem | null>(null)
 

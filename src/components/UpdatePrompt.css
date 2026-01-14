@@ -1,0 +1,145 @@
+.update-prompt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.update-prompt {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.update-icon {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.update-content {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.update-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #202124;
+  margin: 0 0 0.5rem 0;
+}
+
+.update-message {
+  font-size: 0.9375rem;
+  color: #5f6368;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.update-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-direction: column;
+}
+
+.update-btn {
+  padding: 0.875rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.update-btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.update-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.update-btn-primary:active {
+  transform: translateY(0);
+}
+
+.update-btn-secondary {
+  background: #f1f3f4;
+  color: #5f6368;
+}
+
+.update-btn-secondary:hover {
+  background: #e8eaed;
+}
+
+.update-btn-secondary:active {
+  background: #dadce0;
+}
+
+/* 移动端适配 */
+@media (max-width: 640px) {
+  .update-prompt {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .update-icon {
+    font-size: 2.5rem;
+  }
+
+  .update-title {
+    font-size: 1.125rem;
+  }
+
+  .update-message {
+    font-size: 0.875rem;
+  }
+}

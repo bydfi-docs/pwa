@@ -27,7 +27,7 @@ function Market() {
       { name: '链环', symbol: 'LINK' },
     ]
 
-    return symbols.map((item, index) => {
+    return symbols.map((item) => {
       const basePrice = 10000 + Math.random() * 50000
       const change = (Math.random() - 0.5) * 2000
       const changePercent = (change / basePrice) * 100
