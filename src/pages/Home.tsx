@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../App.css'
 
 interface MarketData {
@@ -11,8 +12,41 @@ interface MarketData {
 }
 
 function Home() {
+  const navigate = useNavigate()
   const [isOnline, setIsOnline] = useState(navigator.onLine)
   const [markets, setMarkets] = useState<MarketData[]>([])
+  const [canInstall, setCanInstall] = useState(false)
+
+  // 检测是否可以显示安装入口
+  useEffect(() => {
+    const checkInstallability = async () => {
+      // 检测是否在独立模式（已安装）
+      const isStandalone = window.matchMedia('(display-mode: standalone)').matches || 
+                          (window.navigator as any).standalone === true
+      
+      // 检测是否已安装
+      let isInstalled = false
+      if ('getInstalledRelatedApps' in navigator) {
+        const apps = await (navigator as any).getInstalledRelatedApps()
+        isInstalled = apps.length > 0
+      }
+
+      // 只在未安装时显示入口
+      setCanInstall(!isStandalone && !isInstalled)
+    }
+
+    checkInstallability()
+
+    // 监听安装事件
+    const handleAppInstalled = () => {
+      setCanInstall(false)
+    }
+
+    window.addEventListener('appinstalled', handleAppInstalled)
+    return () => {
+      window.removeEventListener('appinstalled', handleAppInstalled)
+    }
+  }, [])
 
   useEffect(() => {
     const handleOnline = () => setIsOnline(true)
@@ -96,9 +130,21 @@ function Home() {
         <div className="exchange-header-top">
           <div className="exchange-title">
             <h1>交易市场</h1>
-            <div className={`status-badge ${isOnline ? 'online' : 'offline'}`}>
-              <span className="status-dot-small"></span>
-              {isOnline ? '在线' : '离线'}
+            <div className="header-badges">
+              <div className={`status-badge ${isOnline ? 'online' : 'offline'}`}>
+                <span className="status-dot-small"></span>
+                {isOnline ? '在线' : '离线'}
+              </div>
+              {canInstall && (
+                <button 
+                  className="install-entry-btn" 
+                  onClick={() => navigate('/install')}
+                  title="安装应用到桌面"
+                >
+                  <span className="install-icon">📱</span>
+                  <span className="install-text">安装应用</span>
+                </button>
+              )}
             </div>
           </div>
           <div className="market-overview">

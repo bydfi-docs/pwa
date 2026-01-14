@@ -315,3 +315,137 @@ export const AssetsIcon = ({ isActive }: IconProps) => {
     </svg>
   )
 }
+
+// 安装图标 - 手机带下载箭头
+export const InstallIcon = ({ isActive }: IconProps) => {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" key={isActive ? 'active' : 'inactive'}>
+      {/* 手机外框 */}
+      <rect
+        x="5"
+        y="3"
+        width="14"
+        height="18"
+        rx="2"
+        stroke={isActive ? 'url(#installGradient)' : 'currentColor'}
+        strokeWidth="2.5"
+        fill="none"
+        strokeDasharray={isActive ? '64 64' : 'none'}
+        strokeDashoffset={isActive ? 64 : 0}
+      >
+        {isActive && (
+          <animate
+            attributeName="stroke-dashoffset"
+            from="64"
+            to="0"
+            dur="1s"
+            fill="freeze"
+          />
+        )}
+      </rect>
+      
+      {/* 下载箭头 - 竖线 */}
+      <line
+        x1="12"
+        y1="8"
+        x2="12"
+        y2="15"
+        stroke={isActive ? 'url(#installGradient2)' : 'currentColor'}
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeDasharray={isActive ? '7 7' : 'none'}
+        strokeDashoffset={isActive ? 7 : 0}
+      >
+        {isActive && (
+          <animate
+            attributeName="stroke-dashoffset"
+            from="7"
+            to="0"
+            dur="0.5s"
+            begin="0.5s"
+            fill="freeze"
+          />
+        )}
+      </line>
+      
+      {/* 下载箭头 - 左箭头 */}
+      <line
+        x1="12"
+        y1="15"
+        x2="9"
+        y2="12"
+        stroke={isActive ? 'url(#installGradient2)' : 'currentColor'}
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        opacity={isActive ? 0 : 1}
+      >
+        {isActive && (
+          <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1s" fill="freeze" />
+        )}
+      </line>
+      
+      {/* 下载箭头 - 右箭头 */}
+      <line
+        x1="12"
+        y1="15"
+        x2="15"
+        y2="12"
+        stroke={isActive ? 'url(#installGradient2)' : 'currentColor'}
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        opacity={isActive ? 0 : 1}
+      >
+        {isActive && (
+          <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1s" fill="freeze" />
+        )}
+      </line>
+      
+      {/* 底部横线 */}
+      <line
+        x1="9"
+        y1="18"
+        x2="15"
+        y2="18"
+        stroke={isActive ? 'url(#installGradient)' : 'currentColor'}
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        opacity={isActive ? 0 : 1}
+      >
+        {isActive && (
+          <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1.3s" fill="freeze" />
+        )}
+      </line>
+      
+      {isActive && (
+        <>
+          <defs>
+            <linearGradient id="installGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#667eea" />
+              <stop offset="50%" stopColor="#764ba2" />
+              <stop offset="100%" stopColor="#f093fb" />
+              <animate attributeName="x1" values="0%;100%;0%" dur="3s" repeatCount="indefinite" />
+              <animate attributeName="y1" values="0%;100%;0%" dur="3s" repeatCount="indefinite" />
+            </linearGradient>
+            <linearGradient id="installGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#10b981">
+                <animate attributeName="stop-color" values="#10b981;#3b82f6;#10b981" dur="2s" repeatCount="indefinite" />
+              </stop>
+              <stop offset="100%" stopColor="#3b82f6">
+                <animate attributeName="stop-color" values="#3b82f6;#10b981;#3b82f6" dur="2s" repeatCount="indefinite" />
+              </stop>
+            </linearGradient>
+          </defs>
+          {/* 下载动画 - 箭头上下移动 */}
+          <animateTransform
+            attributeName="transform"
+            type="translate"
+            values="0 0; 0 2; 0 0"
+            dur="1.5s"
+            begin="1.5s"
+            repeatCount="indefinite"
+          />
+        </>
+      )}
+    </svg>
+  )
+}

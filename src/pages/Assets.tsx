@@ -91,9 +91,6 @@ function Assets() {
                 <span className="value-usd">${asset.value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                 <span className="value-price">@${asset.price.toLocaleString()}</span>
               </div>
-              <button className="asset-action-btn">
-                <span>•••</span>
-              </button>
             </div>
           ))}
         </div>
