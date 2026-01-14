@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && cp dist/index.html dist/404.html",
     "lint": "eslint .",
     "preview": "vite preview",
     "check:pwa": "node check-pwa-resources.cjs",
-    "generate:screenshots": "node generate-screenshots.cjs"
+    "generate:screenshots": "node generate-screenshots.cjs",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "canvas": "^3.2.1",
@@ -26,6 +27,7 @@
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
+    "gh-pages": "^6.3.0",
     "globals": "^16.5.0",
     "image-size": "^2.0.2",
     "puppeteer": "^24.35.0",

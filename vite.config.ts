@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/', // GitHub Pages 根路径部署
+  base: '/pwa/', // GitHub Pages 项目路径部署
   server: {
     host: '0.0.0.0', // 监听所有地址，包括 127.0.0.1 和 localhost
     port: 5173,
